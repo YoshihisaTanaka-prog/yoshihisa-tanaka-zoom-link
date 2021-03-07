@@ -1,0 +1,15 @@
+<h3>リンクを送信</h3>
+
+<table>
+    <% @users.each do |u| %>
+        <% if !u.admin %>
+            <tr>
+                <td><%= u.username %></td>
+                <td><%= link_to "リンクを変更", admin_edit_path(:id => u.id), method: :get %></td>
+                <td><%= link_to "ユーザ情報を変更", admin_edit_userinfo_path(:id => u.id), method: :get %></td>
+            </tr>
+        <% end %>
+    <% end %>
+</table><br><br>
+
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>

@@ -1,0 +1,6 @@
+<h3>URLの修正</h3>
+
+<%= form_tag admin_edit_path(:id => params["id"]) do %>
+    <%= text_field_tag :url, @user.url %>
+    <%= submit_tag "編集" %>
+<% end %>

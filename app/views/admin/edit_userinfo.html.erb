@@ -1,0 +1,8 @@
+<h3>ユーザー情報の修正</h3>
+
+<%= form_tag admin_edit_userinfo_path(:id => params["id"]) do %>
+    <%= text_field_tag :name, @user.username %>
+    <%= text_field_tag :url, @user.url %>
+    <%= submit_tag "編集" %>
+<% end %>
+
